@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "a to z listing for the BBC coding exercise",
   "main": "app.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "node app.js"
   },
   "author": "David Kananda",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
+  }
 }

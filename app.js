@@ -10,3 +10,5 @@ app.use('/', function (req, res, next) {
 });
 
 app.listen(port);
+
+module.exports = app;

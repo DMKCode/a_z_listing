@@ -1,13 +1,13 @@
 var express = require('express');
+var listingRoutes = require('./routes/listingRoutes');
 
 var app = express();
 
 var port = process.env.PORT || 3000;
 
-app.use('/', function (req, res, next) {
-	console.log('Basic server up and running.');
-	next();
-});
+app.set('view engine', 'ejs');
+app.use('/', listingRoutes);
+
 
 app.listen(port);
 

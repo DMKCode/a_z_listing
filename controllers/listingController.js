@@ -14,6 +14,11 @@ var getListings = (req, res, callback) => {
         });
 };
 
+var singleAtoZ = (letter) => {
+    return /^[a-z]$/.test(letter);
+}
+
 module.exports = { 
-    getListings: getListings 
+    getListings: getListings,
+    singleAtoZ: singleAtoZ 
 };

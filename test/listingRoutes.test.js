@@ -5,22 +5,21 @@ chai.use(chaiHttp);
 
 var app = require('../app');
 
-describe('Listing Routes', function () {
+describe('Listing Routes', () => {
 
-  beforeEach(function (done) {
+  beforeEach((done) => {
     done();
   });
 
-  afterEach(function (done) {
+  afterEach((done) => {
     done();
   });
 
-  describe('GET /', function () {
-    it('should render the listing view', function (done) {
+  describe('GET /', () => {
+    it('should render the listing view', (done) => {
       chai.request(app)
         .get('/')
-        .end(function (err, res) {
-          res.redirects.length.should.equal(0);
+        .end((err, res) => {
           res.status.should.equal(200);
           res.type.should.equal('text/html');
           res.text.should.contain('<h1>A-Z Programme Listing</h1>');

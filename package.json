@@ -15,7 +15,8 @@
     "chai-http": "^3.0.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "superagent": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

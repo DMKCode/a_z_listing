@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var nock = require('nock');
 var getListings = require('../controllers/listingController').getListings;
+var singleAtoZ = require('../controllers/listingController').singleAtoZ;
 var listingResponse = require('./listingResponse');
 
 describe('GET listing from API end point', () => {
@@ -32,5 +33,35 @@ describe('GET listing from API end point', () => {
       done();
     });
 
+  });
+});
+describe('Request letter and page number', () => {
+  it('should only be a single letter, lower case, a-z', (done) => {
+    
+    var letter = 'a';
+    var isSingleAtoZ = singleAtoZ(letter)   
+    expect(isSingleAtoZ).to.equal(true);
+
+    // API end point does not allow single letters
+    letter = 'aa';
+    isSingleAtoZ = singleAtoZ(letter)   
+    expect(isSingleAtoZ).to.equal(false);
+
+    // API end point does not allow capital letters
+    letter = 'A';
+    isSingleAtoZ = singleAtoZ(letter)   
+    expect(isSingleAtoZ).to.equal(false);
+
+    // API end point does not allow blanks
+    letter = '';
+    isSingleAtoZ = singleAtoZ(letter)   
+    expect(isSingleAtoZ).to.equal(false);
+
+    // API end point does not allow numbers
+    letter = '1';
+    isSingleAtoZ = singleAtoZ(letter)   
+    expect(isSingleAtoZ).to.equal(false);
+
+    done();
   });
 });

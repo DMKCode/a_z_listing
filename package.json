@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "David Kananda",
   "license": "ISC",
@@ -15,5 +16,8 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "mocha": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

@@ -18,7 +18,12 @@ var singleAtoZ = (letter) => {
     return /^[a-z]$/.test(letter);
 }
 
+var numberFrom1 = (num) => {
+    return /^[1-9]+$/.test(num);
+}
+
 module.exports = { 
     getListings: getListings,
-    singleAtoZ: singleAtoZ 
+    singleAtoZ: singleAtoZ,
+    numberFrom1: numberFrom1 
 };

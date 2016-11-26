@@ -1,7 +1,9 @@
 var expect = require('chai').expect;
 var nock = require('nock');
+
 var getListings = require('../controllers/listingController').getListings;
 var singleAtoZ = require('../controllers/listingController').singleAtoZ;
+var numberFrom1 = require('../controllers/listingController').numberFrom1;
 var listingResponse = require('./listingResponse');
 
 describe('GET listing from API end point', () => {
@@ -61,6 +63,36 @@ describe('Request letter and page number', () => {
     letter = '1';
     isSingleAtoZ = singleAtoZ(letter)   
     expect(isSingleAtoZ).to.equal(false);
+
+    done();
+  });
+
+  it('should only be a number starting from 1', (done) => {
+    
+    // API end point allows number = 1
+    var num = '1';
+    var isNum = numberFrom1(num)   
+    expect(isNum).to.equal(true);
+
+    // API end point allows numbers > 1
+    num = '11';
+    isNum = numberFrom1(num)   
+    expect(isNum).to.equal(true);
+
+    // API end point does not allow numbers < 1
+    num = '0';
+    isNum = numberFrom1(num)   
+    expect(isNum).to.equal(false);
+
+    // API end point does not allow letters
+    num = 'a';
+    isNum = numberFrom1(num)   
+    expect(isNum).to.equal(false);
+
+    // API end point does not allow blanks
+    num = '';
+    isNum = numberFrom1(num)   
+    expect(isNum).to.equal(false);
 
     done();
   });

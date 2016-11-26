@@ -1,7 +1,19 @@
 var request = require('superagent');
 
 var getListings = (req, res, callback) => {
-    var listingUrl = require('../config').listingApiEndPoint(req.params.letter, req.query.page);
+    var letter = req.params.letter;
+    var pageNum = req.query.page || 1; // API defaults to page 1
+
+    if(!singleAtoZ(letter)) {
+        callback('404');
+        return;
+    }
+
+    if(!numberFrom1(pageNum)) {
+        callback('404');
+        return;
+    }
+    var listingUrl = require('../config').listingApiEndPoint(letter, pageNum);
     request
         .get(listingUrl)
         .end((err, res) => {

@@ -7,15 +7,20 @@ var numberFrom1 = require('../controllers/listingController').numberFrom1;
 var listingResponse = require('./listingResponse');
 
 describe('GET listing from API end point', () => {
-  beforeEach(()=>{   
+  beforeEach((done) => {
     // mock the api end point request response
     nock('https://ibl.api.bbci.co.uk')
       .get('/ibl/v1/atoz/a/programmes?page=1')
       .reply(200, listingResponse);
+    done();
+  });
+
+  afterEach((done) => {
+    done();
   });
   
   it('should return listings', (done) => {
-    
+
     // mock request: req and response: res objects
     var req = {
       params: {

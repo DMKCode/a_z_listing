@@ -3,6 +3,7 @@ var nock = require('nock');
 
 var getListings = require('../controllers/listingController').getListings;
 var singleAtoZ = require('../controllers/listingController').singleAtoZ;
+var zeroToNine = require('../controllers/listingController').zeroToNine;
 var numberFrom1 = require('../controllers/listingController').numberFrom1;
 var listingResponse = require('./listingResponse');
 
@@ -51,12 +52,12 @@ describe('Request letter and page number', () => {
 
     // API end point does not allow single letters
     letter = 'aa';
-    isSingleAtoZ = singleAtoZ(letter)   
+    isSingleAtoZ = singleAtoZ(letter);   
     expect(isSingleAtoZ).to.equal(false);
 
     // API end point does not allow capital letters
     letter = 'A';
-    isSingleAtoZ = singleAtoZ(letter)   
+    isSingleAtoZ = singleAtoZ(letter);   
     expect(isSingleAtoZ).to.equal(false);
 
     // API end point does not allow blanks
@@ -72,31 +73,61 @@ describe('Request letter and page number', () => {
     done();
   });
 
+  it('should only be "0-9"', (done) => {
+    
+    var zeroNine = '0-9';
+    var isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(true);
+
+    // API end point does not allow != '0-9'
+    zeroNine = '1-9';
+    isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(false);
+
+    zeroNine = '0';
+    isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(false);
+
+    zeroNine = '9';
+    isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(false);
+
+    zeroNine = 'a';
+    isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(false);
+
+    zeroNine = 'A';
+    isZeroToNine = zeroToNine(zeroNine);   
+    expect(isZeroToNine).to.equal(false);
+
+    done();
+  });
+
   it('should only be a number starting from 1', (done) => {
     
     // API end point allows number = 1
     var num = '1';
-    var isNum = numberFrom1(num)   
+    var isNum = numberFrom1(num);   
     expect(isNum).to.equal(true);
 
     // API end point allows numbers > 1
     num = '11';
-    isNum = numberFrom1(num)   
+    isNum = numberFrom1(num);   
     expect(isNum).to.equal(true);
 
     // API end point does not allow numbers < 1
     num = '0';
-    isNum = numberFrom1(num)   
+    isNum = numberFrom1(num);   
     expect(isNum).to.equal(false);
 
     // API end point does not allow letters
     num = 'a';
-    isNum = numberFrom1(num)   
+    isNum = numberFrom1(num);   
     expect(isNum).to.equal(false);
 
     // API end point does not allow blanks
     num = '';
-    isNum = numberFrom1(num)   
+    isNum = numberFrom1(num);   
     expect(isNum).to.equal(false);
 
     done();

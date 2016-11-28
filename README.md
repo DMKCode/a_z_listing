@@ -10,7 +10,7 @@ This is the source code for the BBC iPlayer coding exercise.
 
 The application is developed in Node.
 You will need to install Node to run and test the application.
-To download and install node, [click here]("https://nodejs.org/en/download/"). 
+To download and install node, [click here](https://nodejs.org/en/download/). 
 
 
 

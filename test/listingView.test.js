@@ -40,9 +40,9 @@ describe('Listing Routes', () => {
     describe('A-Z Programme Listing View Page', () => {
         it('should show page listings: image and title', (done) => {
             assert.ok(this.browser.success);
-            assert.equal(this.browser.text('h1'), 'A-Z Programme Listing');
-            assert.equal(this.browser.text('ol li'), listingResponse.atoz_programmes.elements[0].title);
-            assert.equal(browser.attribute('ol li img', 'src'), listingResponse.atoz_programmes.elements[0].images.standard);
+            this.browser.assert.text('h1', 'A-Z Programme Listing');
+            this.browser.assert.text('ul li', listingResponse.atoz_programmes.elements[0].title);
+            this.browser.assert.attribute('ul li img', 'src', (listingResponse.atoz_programmes.elements[0].images.standard).replace("{recipe}", "560x315"));
             done();
         });
     });

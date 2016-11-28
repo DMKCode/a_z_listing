@@ -7,8 +7,13 @@
 	<h1>
 		<h1>A-Z Programme Listing</h1>
 	</h1>
+
+	<div id="letter-navigation">
+		<%- include('letter-nav', { character: listings.atoz_programmes.character }); %>
+	</div>
+
 	<div>
-		<ul>
+		<ol class="listing">
 			<% listings.atoz_programmes.elements.forEach(function(lisiting) { %>
 				<li>
 					<figure>
@@ -19,7 +24,7 @@
 					</figure>
 				</li>
 			<% }); %>
-		</ul>
+		</ol>
 	</div>
 </body>
 

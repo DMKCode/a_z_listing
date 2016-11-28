@@ -1,0 +1,12 @@
+<ul>
+    <% var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0-9'] %>
+    <% letters.forEach(function(letter){ %>
+        <li>
+            <% if ((letter).toLowerCase() === character) { %>
+            <a class="active"><%= letter %></a>
+            <% } else { %>
+                <a href=<%= '/' +  (letter).toLowerCase() + '/programmes'; %>><%= letter %></a>
+            <% } %>
+        </li>
+    <% }); %>
+</ul>

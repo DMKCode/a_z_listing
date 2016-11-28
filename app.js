@@ -5,6 +5,9 @@ var app = express();
 
 var port = process.env.PORT || 3000;
 
+// virtual path for files in the public directory
+app.use('/assets', express.static(__dirname + '/public'));
+
 app.set('view engine', 'ejs');
 app.use('/', listingRoutes);
 

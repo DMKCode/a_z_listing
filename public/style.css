@@ -1,0 +1,140 @@
+body {
+  width: 80%;
+  margin: 30px auto;
+  font-family: Arial,Helvetica,freesans,sans-serif;
+}
+
+h1, h4 {
+  text-align: center;
+  font-size: 1.65em;
+  margin: 0 0 30px;
+}
+
+/*** listing ****/
+
+.listing {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+.listing li {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.listing li:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .listing li {
+    width: calc(25% - 6px);
+  }
+  
+  .listing li:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+  
+  .listing li:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+.listing li:hover img {
+  transform: scale(1.15);
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+figcaption {
+  margin-top: 15px;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #ccc;
+  transition: transform .2s ease-in-out;
+}
+/*****************/
+
+/***** letter navigation ******/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #f4427d;
+}
+
+#letter-navigation ul li {
+    float: left;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+#letter-navigation ul li {
+  width: 10%;
+}
+#letter-navigation ul li#numbers {
+  width: 10%;
+}
+
+@media only screen and (max-width: 688px){
+  #letter-navigation ul li {
+    width: 20%;
+  }
+  #letter-navigation ul li#numbers {
+    width: 20%;
+  }
+}
+/*****************/
+
+/***** pagination ******/
+
+#pagination-navigation {
+  text-align: center;
+}
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/********************/

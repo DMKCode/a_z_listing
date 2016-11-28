@@ -10,6 +10,8 @@ listingRouter.route('/:letter/programmes')
                 res.render('listing', { listings: listings });
                 return;
             }
+            res.status(err);
+            res.render(err, { title: '404 Page Not Found.'} );
             
         });
         

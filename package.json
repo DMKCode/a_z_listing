@@ -10,6 +10,10 @@
   },
   "author": "David Kananda",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DMKCode/a_z_listing"
+  },
   "dependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",

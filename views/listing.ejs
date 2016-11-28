@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+	<link href="/assets/style.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -12,7 +14,10 @@
 		<%- include('letter-nav', { character: listings.atoz_programmes.character }); %>
 	</div>
 
-	<div>
+	<div id="listing_section">
+		<% if (listings.atoz_programmes.elements.length < 1) { %>
+			<h4>This page does not have any listings.</h4>		
+		<% } %>
 		<ol class="listing">
 			<% listings.atoz_programmes.elements.forEach(function(lisiting) { %>
 				<li>

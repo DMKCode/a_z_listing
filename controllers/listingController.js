@@ -1,5 +1,12 @@
+// package for making requests
 var request = require('superagent');
 
+/**
+ * constructs a url given a letter or '0-9' and page number
+ * @param  {Object}  req        - request object
+ * @param  {Object}  res        - response object
+ * @param  {Function} callback  - callback function to invoke 
+ */
 var getListings = (req, res, callback) => {
     var letter = req.params.letter;
     var pageNum = req.query.page || 1; // API defaults to page 1
@@ -26,14 +33,29 @@ var getListings = (req, res, callback) => {
         });
 };
 
+/**
+ * checks if letter is a single lower case letter i.e. a-z
+ * @param  {String}  letter - letter character to check
+ * @return {Boolean}        - true or false
+ */
 var singleAtoZ = (letter) => {
     return /^[a-z]$/.test(letter);
 };
 
+/**
+ * checks if string is '0-9'
+ * @param  {String}  zeroNine   - String to check 
+ * @return {Boolean}            - true or false
+ */
 var zeroToNine = (zeroNine) => {
     return /^0-9$/.test(zeroNine);
 };
 
+/**
+ * checks if number is >= 1
+ * @param  {Number}  num - Number to check
+ * @return {Boolean}     - true or false
+ */
 var numberFrom1 = (num) => {
     return /^[1-9]+$/.test(num);
 };

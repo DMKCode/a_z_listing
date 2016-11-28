@@ -1,9 +1,19 @@
+// chai package for testing
 var chai = require('chai');
+
+// assert assertion style from chai package
 var assert = chai.assert;
+
+// http package provided by node to start app in test environment
 var http = require('http');
+
+// package for mocking requests
 var nock = require('nock');
+
+// package for headless browsing
 var Browser = require('zombie');
 
+// mock response json
 var listingResponse = require('./listingResponse');
 
 var app = require('../app');

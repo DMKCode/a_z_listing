@@ -1,4 +1,7 @@
+// expect assertion style from chai package
 var expect = require('chai').expect;
+
+// package for mocking requests
 var nock = require('nock');
 
 var getListings = require('../controllers/listingController').getListings;

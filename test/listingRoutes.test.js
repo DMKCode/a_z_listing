@@ -1,9 +1,17 @@
+// chai package for testing
 var chai = require('chai');
+
+// should assertion style from chai package
 var should = chai.should();
+
+// package for http request in test environment
 var chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
+// package for mocking requests
 var nock = require('nock');
+
+// mock response json
 var listingResponse = require('./listingResponse');
 
 var app = require('../app');

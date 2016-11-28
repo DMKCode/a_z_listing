@@ -26,6 +26,10 @@
 			<% }); %>
 		</ol>
 	</div>
+
+	<div id="pagination-navigation">
+		<%- include('pagination', { character: listings.atoz_programmes.character, count: listings.atoz_programmes.count, per_page: listings.atoz_programmes.per_page, page: listings.atoz_programmes.page }); %>
+	</div>
 </body>
 
 </html>

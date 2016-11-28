@@ -56,7 +56,7 @@ describe('Listing Routes', () => {
         it('should show pagination', (done) => {
             assert.ok(this.browser.success);
             this.browser.assert.text('h1', 'A-Z Programme Listing');
-            this.browser.assert.text('.pagination li a', '«12345»');
+            this.browser.assert.text('.pagination li a', '12345»');
             done();
         });
     });

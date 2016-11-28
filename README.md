@@ -33,7 +33,7 @@ Using the terminal/ command line:
 
 1. Run `npm run start` to run the application.
 
-1. Go to [](http://localhost:3000/a-z) to view the listings.
+1. Go to [http://localhost:3000/a-z](http://localhost:3000/a-z) to view the listings.
 
 
 

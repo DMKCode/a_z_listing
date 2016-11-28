@@ -25,7 +25,7 @@ describe('Listing Routes', () => {
   describe('GET Rendering', () => {
     it('should render the listing view', (done) => {
       chai.request(app)
-        .get('/a/programmes')
+        .get('/a-z/a/programmes')
         .end((err, res) => {
           res.status.should.equal(200);
           res.type.should.equal('text/html');

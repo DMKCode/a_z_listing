@@ -2,17 +2,17 @@
     <% var numOfPages = Math.ceil(parseInt(count)/parseInt(per_page)) %>
     <% if(numOfPages > 1) { %>
         <% if(parseInt(page) > 1) { %>
-            <li><a href=<%= '/'+ character + '/programmes?page=' + (parseInt(page) - 1); %>>«</a></li>
+            <li><a href=<%= '/a-z/'+ character + '/programmes?page=' + (parseInt(page) - 1); %>>«</a></li>
         <% } %>
             <% for(var i=1; i <= numOfPages; i++) { %>
                 <% if(parseInt(page) === i) { %>
                     <li><a class="active"><%= i; %></a></li>
                 <% } else { %>
-                    <li><a href=<%= '/'+ character + '/programmes?page=' + i; %>><%= i; %></a></li> 
+                    <li><a href=<%= '/a-z/'+ character + '/programmes?page=' + i; %>><%= i; %></a></li> 
                 <% } %>   
             <% } %>
         <% if(parseInt(page) < numOfPages) { %>
-            <li><a href=<%= '/'+ character + '/programmes?page=' + (parseInt(page) + 1); %>>»</a></li>
+            <li><a href=<%= '/a-z/'+ character + '/programmes?page=' + (parseInt(page) + 1); %>>»</a></li>
         <% } %>
     <% } %>
 </ul>

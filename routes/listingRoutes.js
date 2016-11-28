@@ -3,7 +3,7 @@ var listingController = require('../controllers/listingController').getListings;
 
 var listingRouter = express.Router();
 
-listingRouter.route('/:letter/programmes')
+listingRouter.route('/a-z/:letter/programmes')
     .get((req, res) => {
         listingController(req, res, (err, listings) => {
             if(!err) {
@@ -15,6 +15,11 @@ listingRouter.route('/:letter/programmes')
             
         });
         
+    });
+
+listingRouter.route('/a-z')
+    .get((req, res) => {
+        res.redirect('/a-z/a/programmes?page=1');  
     });
 
 module.exports = listingRouter;

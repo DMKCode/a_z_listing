@@ -17,7 +17,7 @@ describe('Listing Routes', () => {
     });
     
     before((done) => {
-        this.browser.visit('/a/programmes', done);
+        this.browser.visit('/a-z/a/programmes', done);
     });
     
     beforeEach((done) => {
